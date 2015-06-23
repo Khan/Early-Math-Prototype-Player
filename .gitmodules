@@ -1,0 +1,3 @@
+[submodule "Early Math Prototype Player/Early-Math-Prototypes"]
+	path = Early Math Prototype Player/Early-Math-Prototypes
+	url = git@github.com:Khan/Early-Math-Prototypes.git
