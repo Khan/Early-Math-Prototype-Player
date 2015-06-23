@@ -8,45 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		962558FC1B39AF1A005E4360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962558FB1B39AF1A005E4360 /* AppDelegate.swift */; };
-		962558FE1B39AF1A005E4360 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962558FD1B39AF1A005E4360 /* ViewController.swift */; };
-		962559011B39AF1A005E4360 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 962558FF1B39AF1A005E4360 /* Main.storyboard */; };
 		962559031B39AF1A005E4360 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962559021B39AF1A005E4360 /* Images.xcassets */; };
 		962559061B39AF1A005E4360 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962559041B39AF1A005E4360 /* LaunchScreen.xib */; };
-		962559121B39AF1A005E4360 /* Early_Math_Prototype_PlayerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962559111B39AF1A005E4360 /* Early_Math_Prototype_PlayerTests.swift */; };
+		9625591C1B39AF72005E4360 /* PrototypeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591B1B39AF72005E4360 /* PrototypeListTableViewController.swift */; };
+		9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591D1B39AF80005E4360 /* PlayerViewController.swift */; };
+		962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962559201B39AFA6005E4360 /* PrototypeProvider.swift */; };
+		962559231B39AFB9005E4360 /* Early-Math-Prototypes in Resources */ = {isa = PBXBuildFile; fileRef = 962559221B39AFB9005E4360 /* Early-Math-Prototypes */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		9625590C1B39AF1A005E4360 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 962558EE1B39AF1A005E4360 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 962558F51B39AF1A005E4360;
-			remoteInfo = "Early Math Prototype Player";
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Early Math Prototype Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		962558FA1B39AF1A005E4360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		962558FB1B39AF1A005E4360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		962558FD1B39AF1A005E4360 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		962559001B39AF1A005E4360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		962559021B39AF1A005E4360 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		962559051B39AF1A005E4360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9625590B1B39AF1A005E4360 /* Early Math Prototype PlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Early Math Prototype PlayerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		962559101B39AF1A005E4360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		962559111B39AF1A005E4360 /* Early_Math_Prototype_PlayerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Early_Math_Prototype_PlayerTests.swift; sourceTree = "<group>"; };
+		9625591B1B39AF72005E4360 /* PrototypeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeListTableViewController.swift; sourceTree = "<group>"; };
+		9625591D1B39AF80005E4360 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		962559201B39AFA6005E4360 /* PrototypeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeProvider.swift; sourceTree = "<group>"; };
+		962559221B39AFB9005E4360 /* Early-Math-Prototypes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Early-Math-Prototypes"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		962558F31B39AF1A005E4360 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		962559081B39AF1A005E4360 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,7 +43,6 @@
 			isa = PBXGroup;
 			children = (
 				962558F81B39AF1A005E4360 /* Early Math Prototype Player */,
-				9625590E1B39AF1A005E4360 /* Early Math Prototype PlayerTests */,
 				962558F71B39AF1A005E4360 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */,
-				9625590B1B39AF1A005E4360 /* Early Math Prototype PlayerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,9 +58,10 @@
 		962558F81B39AF1A005E4360 /* Early Math Prototype Player */ = {
 			isa = PBXGroup;
 			children = (
+				9625591F1B39AF96005E4360 /* Model */,
 				962558FB1B39AF1A005E4360 /* AppDelegate.swift */,
-				962558FD1B39AF1A005E4360 /* ViewController.swift */,
-				962558FF1B39AF1A005E4360 /* Main.storyboard */,
+				9625591B1B39AF72005E4360 /* PrototypeListTableViewController.swift */,
+				9625591D1B39AF80005E4360 /* PlayerViewController.swift */,
 				962559021B39AF1A005E4360 /* Images.xcassets */,
 				962559041B39AF1A005E4360 /* LaunchScreen.xib */,
 				962558F91B39AF1A005E4360 /* Supporting Files */,
@@ -90,26 +72,18 @@
 		962558F91B39AF1A005E4360 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				962559221B39AFB9005E4360 /* Early-Math-Prototypes */,
 				962558FA1B39AF1A005E4360 /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9625590E1B39AF1A005E4360 /* Early Math Prototype PlayerTests */ = {
+		9625591F1B39AF96005E4360 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				962559111B39AF1A005E4360 /* Early_Math_Prototype_PlayerTests.swift */,
-				9625590F1B39AF1A005E4360 /* Supporting Files */,
+				962559201B39AFA6005E4360 /* PrototypeProvider.swift */,
 			);
-			path = "Early Math Prototype PlayerTests";
-			sourceTree = "<group>";
-		};
-		9625590F1B39AF1A005E4360 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				962559101B39AF1A005E4360 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -132,24 +106,6 @@
 			productReference = 962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9625590A1B39AF1A005E4360 /* Early Math Prototype PlayerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 962559181B39AF1A005E4360 /* Build configuration list for PBXNativeTarget "Early Math Prototype PlayerTests" */;
-			buildPhases = (
-				962559071B39AF1A005E4360 /* Sources */,
-				962559081B39AF1A005E4360 /* Frameworks */,
-				962559091B39AF1A005E4360 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9625590D1B39AF1A005E4360 /* PBXTargetDependency */,
-			);
-			name = "Early Math Prototype PlayerTests";
-			productName = "Early Math Prototype PlayerTests";
-			productReference = 9625590B1B39AF1A005E4360 /* Early Math Prototype PlayerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -161,10 +117,6 @@
 				TargetAttributes = {
 					962558F51B39AF1A005E4360 = {
 						CreatedOnToolsVersion = 6.3.1;
-					};
-					9625590A1B39AF1A005E4360 = {
-						CreatedOnToolsVersion = 6.3.1;
-						TestTargetID = 962558F51B39AF1A005E4360;
 					};
 				};
 			};
@@ -182,7 +134,6 @@
 			projectRoot = "";
 			targets = (
 				962558F51B39AF1A005E4360 /* Early Math Prototype Player */,
-				9625590A1B39AF1A005E4360 /* Early Math Prototype PlayerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -192,16 +143,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				962559011B39AF1A005E4360 /* Main.storyboard in Resources */,
+				962559231B39AFB9005E4360 /* Early-Math-Prototypes in Resources */,
 				962559061B39AF1A005E4360 /* LaunchScreen.xib in Resources */,
 				962559031B39AF1A005E4360 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		962559091B39AF1A005E4360 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,38 +156,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				962558FE1B39AF1A005E4360 /* ViewController.swift in Sources */,
+				9625591C1B39AF72005E4360 /* PrototypeListTableViewController.swift in Sources */,
 				962558FC1B39AF1A005E4360 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		962559071B39AF1A005E4360 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				962559121B39AF1A005E4360 /* Early_Math_Prototype_PlayerTests.swift in Sources */,
+				9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */,
+				962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		9625590D1B39AF1A005E4360 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 962558F51B39AF1A005E4360 /* Early Math Prototype Player */;
-			targetProxy = 9625590C1B39AF1A005E4360 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		962558FF1B39AF1A005E4360 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				962559001B39AF1A005E4360 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		962559041B39AF1A005E4360 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -358,40 +280,6 @@
 			};
 			name = Release;
 		};
-		962559191B39AF1A005E4360 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Early Math Prototype PlayerTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Early Math Prototype Player.app/Early Math Prototype Player";
-			};
-			name = Debug;
-		};
-		9625591A1B39AF1A005E4360 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "Early Math Prototype PlayerTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Early Math Prototype Player.app/Early Math Prototype Player";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -409,14 +297,6 @@
 			buildConfigurations = (
 				962559161B39AF1A005E4360 /* Debug */,
 				962559171B39AF1A005E4360 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		962559181B39AF1A005E4360 /* Build configuration list for PBXNativeTarget "Early Math Prototype PlayerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				962559191B39AF1A005E4360 /* Debug */,
-				9625591A1B39AF1A005E4360 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
