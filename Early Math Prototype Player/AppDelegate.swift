@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		application.idleTimerDisabled = true
 		
+		window = UIWindow(frame: UIScreen.mainScreen().bounds)
+		
 		prototypeListTableViewController = PrototypeListTableViewController(style: .Plain)
 		
 		navigationController = UINavigationController(rootViewController: prototypeListTableViewController)
@@ -32,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		swipeGestureRecognizer.numberOfTouchesRequired = 3
 		swipeGestureRecognizer.direction = .Right
 		window?.addGestureRecognizer(swipeGestureRecognizer)
+		window?.makeKeyAndVisible()
 		
 		return true
 	}

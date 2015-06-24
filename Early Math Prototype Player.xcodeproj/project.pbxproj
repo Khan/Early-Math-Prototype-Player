@@ -14,7 +14,107 @@
 		9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591D1B39AF80005E4360 /* PlayerViewController.swift */; };
 		962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962559201B39AFA6005E4360 /* PrototypeProvider.swift */; };
 		962559231B39AFB9005E4360 /* Early-Math-Prototypes in Resources */ = {isa = PBXBuildFile; fileRef = 962559221B39AFB9005E4360 /* Early-Math-Prototypes */; };
+		96DBF37F1B3AF25A003E0D46 /* Prototope.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DBF36E1B3AF243003E0D46 /* Prototope.framework */; };
+		96DBF3801B3AF25A003E0D46 /* Prototope.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96DBF36E1B3AF243003E0D46 /* Prototope.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96DBF3831B3AF25A003E0D46 /* PrototopeJSBridge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 96DBF3741B3AF243003E0D46 /* PrototopeJSBridge.framework */; };
+		96DBF3841B3AF25A003E0D46 /* PrototopeJSBridge.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 96DBF3741B3AF243003E0D46 /* PrototopeJSBridge.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		96DBF3901B3AFE68003E0D46 /* protoscope-bundle.js in Resources */ = {isa = PBXBuildFile; fileRef = 96DBF38F1B3AFE68003E0D46 /* protoscope-bundle.js */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		96DBF36D1B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EBE3A75619DF79C400A77736;
+			remoteInfo = Prototope;
+		};
+		96DBF36F1B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB306C0919DF77CC00113FA3;
+			remoteInfo = PrototopeTestApp;
+		};
+		96DBF3711B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB1C2A6C19E4D19B000DC2C1;
+			remoteInfo = PrototopeTests;
+		};
+		96DBF3731B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB453D8F1A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridge;
+		};
+		96DBF3751B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB453D991A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridgeTests;
+		};
+		96DBF3771B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFB801A857326002B4E6A;
+			remoteInfo = Protocaster;
+		};
+		96DBF3791B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFB911A857326002B4E6A;
+			remoteInfo = ProtocasterTests;
+		};
+		96DBF37B1B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFBB51A857920002B4E6A;
+			remoteInfo = Protoscope;
+		};
+		96DBF37D1B3AF243003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EB6BFBC91A857921002B4E6A;
+			remoteInfo = ProtoscopeTests;
+		};
+		96DBF3811B3AF25A003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EBE3A75519DF79C400A77736;
+			remoteInfo = Prototope;
+		};
+		96DBF3851B3AF25A003E0D46 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = EB453D8E1A7AB0B2006F2A72;
+			remoteInfo = PrototopeJSBridge;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		96DBF3871B3AF25A003E0D46 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				96DBF3801B3AF25A003E0D46 /* Prototope.framework in Embed Frameworks */,
+				96DBF3841B3AF25A003E0D46 /* PrototopeJSBridge.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Early Math Prototype Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,6 +126,8 @@
 		9625591D1B39AF80005E4360 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		962559201B39AFA6005E4360 /* PrototypeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeProvider.swift; sourceTree = "<group>"; };
 		962559221B39AFB9005E4360 /* Early-Math-Prototypes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Early-Math-Prototypes"; sourceTree = "<group>"; };
+		96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Prototope.xcodeproj; path = Prototope/Prototope.xcodeproj; sourceTree = SOURCE_ROOT; };
+		96DBF38F1B3AFE68003E0D46 /* protoscope-bundle.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "protoscope-bundle.js"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +135,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DBF37F1B3AF25A003E0D46 /* Prototope.framework in Frameworks */,
+				96DBF3831B3AF25A003E0D46 /* PrototopeJSBridge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,8 +176,10 @@
 		962558F91B39AF1A005E4360 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */,
 				962559221B39AFB9005E4360 /* Early-Math-Prototypes */,
 				962558FA1B39AF1A005E4360 /* Info.plist */,
+				96DBF38F1B3AFE68003E0D46 /* protoscope-bundle.js */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -86,6 +192,22 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		96DBF35E1B3AF243003E0D46 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				96DBF36E1B3AF243003E0D46 /* Prototope.framework */,
+				96DBF3701B3AF243003E0D46 /* PrototopeTestApp.app */,
+				96DBF3721B3AF243003E0D46 /* PrototopeTests.xctest */,
+				96DBF3741B3AF243003E0D46 /* PrototopeJSBridge.framework */,
+				96DBF3761B3AF243003E0D46 /* PrototopeJSBridgeTests.xctest */,
+				96DBF3781B3AF243003E0D46 /* Protocaster.app */,
+				96DBF37A1B3AF243003E0D46 /* ProtocasterTests.xctest */,
+				96DBF37C1B3AF243003E0D46 /* Protoscope.app */,
+				96DBF37E1B3AF243003E0D46 /* ProtoscopeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,10 +218,13 @@
 				962558F21B39AF1A005E4360 /* Sources */,
 				962558F31B39AF1A005E4360 /* Frameworks */,
 				962558F41B39AF1A005E4360 /* Resources */,
+				96DBF3871B3AF25A003E0D46 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				96DBF3821B3AF25A003E0D46 /* PBXTargetDependency */,
+				96DBF3861B3AF25A003E0D46 /* PBXTargetDependency */,
 			);
 			name = "Early Math Prototype Player";
 			productName = "Early Math Prototype Player";
@@ -131,6 +256,12 @@
 			mainGroup = 962558ED1B39AF1A005E4360;
 			productRefGroup = 962558F71B39AF1A005E4360 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 96DBF35E1B3AF243003E0D46 /* Products */;
+					ProjectRef = 96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				962558F51B39AF1A005E4360 /* Early Math Prototype Player */,
@@ -138,11 +269,78 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		96DBF36E1B3AF243003E0D46 /* Prototope.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Prototope.framework;
+			remoteRef = 96DBF36D1B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF3701B3AF243003E0D46 /* PrototopeTestApp.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = PrototopeTestApp.app;
+			remoteRef = 96DBF36F1B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF3721B3AF243003E0D46 /* PrototopeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrototopeTests.xctest;
+			remoteRef = 96DBF3711B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF3741B3AF243003E0D46 /* PrototopeJSBridge.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = PrototopeJSBridge.framework;
+			remoteRef = 96DBF3731B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF3761B3AF243003E0D46 /* PrototopeJSBridgeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = PrototopeJSBridgeTests.xctest;
+			remoteRef = 96DBF3751B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF3781B3AF243003E0D46 /* Protocaster.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Protocaster.app;
+			remoteRef = 96DBF3771B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF37A1B3AF243003E0D46 /* ProtocasterTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ProtocasterTests.xctest;
+			remoteRef = 96DBF3791B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF37C1B3AF243003E0D46 /* Protoscope.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = Protoscope.app;
+			remoteRef = 96DBF37B1B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		96DBF37E1B3AF243003E0D46 /* ProtoscopeTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ProtoscopeTests.xctest;
+			remoteRef = 96DBF37D1B3AF243003E0D46 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		962558F41B39AF1A005E4360 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96DBF3901B3AFE68003E0D46 /* protoscope-bundle.js in Resources */,
 				962559231B39AFB9005E4360 /* Early-Math-Prototypes in Resources */,
 				962559061B39AF1A005E4360 /* LaunchScreen.xib in Resources */,
 				962559031B39AF1A005E4360 /* Images.xcassets in Resources */,
@@ -164,6 +362,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		96DBF3821B3AF25A003E0D46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Prototope;
+			targetProxy = 96DBF3811B3AF25A003E0D46 /* PBXContainerItemProxy */;
+		};
+		96DBF3861B3AF25A003E0D46 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PrototopeJSBridge;
+			targetProxy = 96DBF3851B3AF25A003E0D46 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		962559041B39AF1A005E4360 /* LaunchScreen.xib */ = {
@@ -264,9 +475,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Prototope/ThirdParty/pop/build/Debug-iphoneos",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/prototope/Prototope",
+					"$(SRCROOT)/prototope/ThirdParty/**",
+				);
 				INFOPLIST_FILE = "Early Math Prototype Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/prototope/ThirdParty/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -274,9 +499,23 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Prototope/ThirdParty/pop/build/Debug-iphoneos",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/prototope/Prototope",
+					"$(SRCROOT)/prototope/ThirdParty/**",
+				);
 				INFOPLIST_FILE = "Early Math Prototype Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/prototope/ThirdParty/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -299,6 +538,7 @@
 				962559171B39AF1A005E4360 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
