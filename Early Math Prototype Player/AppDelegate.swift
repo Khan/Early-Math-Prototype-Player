@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate {
 
 	var window: UIWindow?
 	var prototypeListTableViewController: PrototypeListTableViewController!
@@ -24,7 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		prototypeListTableViewController = PrototypeListTableViewController(style: .Plain)
 		
-		navigationController = UINavigationController(rootViewController: prototypeListTableViewController)		
+		navigationController = UINavigationController(rootViewController: prototypeListTableViewController)
+		navigationController.delegate = self
 
 		window?.rootViewController = navigationController
 		
@@ -41,5 +42,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		self.navigationController.popToRootViewControllerAnimated(true)
 	}
 
+	// Hacks to show/hide navigation bar in prototypes so hack wow
+	func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
+		if viewController is PlayerViewController {
+			navigationController.setNavigationBarHidden(true, animated: true)
+		} else {
+			navigationController.setNavigationBarHidden(false, animated: true)
+		}
+	}
 }
 
