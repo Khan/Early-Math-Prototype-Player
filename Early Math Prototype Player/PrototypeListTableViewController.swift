@@ -16,7 +16,8 @@ class PrototypeListTableViewController: UITableViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		self.tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
+		tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: UITableViewCell.reuseIdentifier)
+		navigationItem.title = "Prototypes"
 	}
 
 	
@@ -41,8 +42,13 @@ class PrototypeListTableViewController: UITableViewController {
 	
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
-		let player = PlayerViewController(path: self.prototypeProvider.prototypes[indexPath.row].mainFileURL)
-		self.navigationController?.pushViewController(player, animated: true)
+		let prototype = self.prototypeProvider.prototypes[indexPath.row]
+
+		if prototype.readmeURL != nil {
+			navigationController?.pushViewController(ReadmeViewController(prototype: prototype), animated: true)
+		} else {
+			navigationController?.pushViewController(PlayerViewController(path: prototype.mainFileURL), animated: true)
+		}
 	}
 
 

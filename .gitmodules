@@ -4,3 +4,6 @@
 [submodule "Prototope"]
 	path = Prototope
 	url = git@github.com:Khan/Prototope.git
+[submodule "ThirdParty/MMMarkdown"]
+	path = ThirdParty/MMMarkdown
+	url = https://github.com/mdiep/MMMarkdown

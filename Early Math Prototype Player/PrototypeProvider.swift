@@ -42,6 +42,7 @@ struct PrototypeProvider {
 /** Prototype..er, type. Represents a prototype directory on disk with reference to the main javascript file. Derived from Protorope.Prototype. */
 struct Prototype {
 	let mainFileURL: NSURL
+	let readmeURL: NSURL?
 	let name: String
 }
 
@@ -82,7 +83,19 @@ extension Prototype {
 				println("Multiple JavaScript files found in \(path): \(javaScriptFiles)")
 				return nil
 			}
+
+			let readmeFiles = contents!.filter { $0.lowercaseString.hasPrefix("readme.md") }
+			switch readmeFiles.count {
+			case 0:
+				readmeURL = nil
+			case 1:
+				readmeURL = NSURL(fileURLWithPath: path.stringByAppendingPathComponent(readmeFiles[0]))
+			default:
+				println("Multiple README files found in \(path): \(readmeFiles)")
+				return nil
+			}
 		} else {
+			readmeURL = nil
 			mainScriptPath = path
 		}
 		
