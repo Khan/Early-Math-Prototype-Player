@@ -13,28 +13,36 @@ import Foundation
 struct PrototypeProvider {
 	
 	private static let prototypeDirectory = "Early-Math-Prototypes"
+	private static let prototypeHiddenMarker = "hideme" // If this file is present in a prototype directory, we skip it in the UI.
 	let prototypes: [Prototype]
 	
 	init() {
 		if let resourcePath = NSBundle.mainBundle().resourcePath {
-			let earlyMathPath = resourcePath + "/" + PrototypeProvider.prototypeDirectory
-			let fileManager = NSFileManager.defaultManager()
+			let earlyMathPath = resourcePath.stringByAppendingPathComponent(PrototypeProvider.prototypeDirectory)
 			var errorPtr = NSErrorPointer()
-			let files = fileManager.contentsOfDirectoryAtPath(earlyMathPath, error: errorPtr) as! [String]
-			let filtered = files.filter {
-				var isDirectory: ObjCBool = ObjCBool(false)
-				if fileManager.fileExistsAtPath(earlyMathPath + "/" + $0, isDirectory: &isDirectory) {
-					return isDirectory.boolValue
-				}
-				return false
+			let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(earlyMathPath, error: errorPtr) as! [String]
+			let validPrototypeDirectories = files.filter { prototypeDirectory in
+				PrototypeProvider.prototypeIsValidAtPath(earlyMathPath.stringByAppendingPathComponent(prototypeDirectory))
 			}
-			self.prototypes = filtered.map {
-				Prototype(directoryURL: NSURL(fileURLWithPath: earlyMathPath + "/" + $0, isDirectory: true)!, name: $0)!
+			self.prototypes = validPrototypeDirectories.map { prototypeDirectory in
+				let prototypeURL = NSURL(fileURLWithPath: earlyMathPath.stringByAppendingPathComponent(prototypeDirectory), isDirectory: true)!
+				return Prototype(directoryURL: prototypeURL, name: prototypeDirectory)!
 			}
 		} else {
 			self.prototypes = []
 		}
 		
+	}
+
+	private static func prototypeIsValidAtPath(path: String) -> Bool {
+		var isDirectory: ObjCBool = ObjCBool(false)
+		let fileManager = NSFileManager.defaultManager()
+		if fileManager.fileExistsAtPath(path, isDirectory: &isDirectory) {
+			let prototypeIsMarkedAsHidden = fileManager.fileExistsAtPath(path.stringByAppendingPathComponent(PrototypeProvider.prototypeHiddenMarker))
+			return isDirectory.boolValue && !prototypeIsMarkedAsHidden
+		} else {
+			return false
+		}
 	}
 }
 
