@@ -24,9 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		
 		prototypeListTableViewController = PrototypeListTableViewController(style: .Plain)
 		
-		navigationController = UINavigationController(rootViewController: prototypeListTableViewController)
-		navigationController.navigationBarHidden = true
-		
+		navigationController = UINavigationController(rootViewController: prototypeListTableViewController)		
 
 		window?.rootViewController = navigationController
 		

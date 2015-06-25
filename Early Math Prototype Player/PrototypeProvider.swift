@@ -42,6 +42,7 @@ struct PrototypeProvider {
 /** Prototype..er, type. Represents a prototype directory on disk with reference to the main javascript file. Derived from Protorope.Prototype. */
 struct Prototype {
 	let mainFileURL: NSURL
+	let readmeURL: NSURL? = nil
 	let name: String
 }
 

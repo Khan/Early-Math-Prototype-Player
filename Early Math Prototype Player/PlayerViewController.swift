@@ -113,4 +113,14 @@ class PlayerViewController: UIViewController {
 		}
 	}
 
+
+	// Hacks to hide navigation bar. so prototype wow.
+	override func viewWillAppear(animated: Bool) {
+		navigationController?.setNavigationBarHidden(true, animated: true)
+	}
+
+	override func viewWillDisappear(animated: Bool) {
+		navigationController?.setNavigationBarHidden(false, animated: true)
+	}
+
 }
