@@ -12,6 +12,10 @@ Running the app on your iPad:
 - Open the project file (Early Math Prototype Player.xcodeproj) in Xcode
 - Make sure you pick the correct app to run and device in Xcode if it's not already chosen.
 
+<img src="scheme@2x.png"/>
+
+- Build and run the app on your Simulator or iPad.
+
 
 This project uses git submodules, so make sure you get them all before you build:
 
