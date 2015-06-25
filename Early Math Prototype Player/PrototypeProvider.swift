@@ -89,7 +89,7 @@ extension Prototype {
 			case 0:
 				readmeURL = nil
 			case 1:
-				readmeURL = NSURL(fileURLWithPath: readmeFiles[0])
+				readmeURL = NSURL(fileURLWithPath: path.stringByAppendingPathComponent(readmeFiles[0]))
 			default:
 				println("Multiple README files found in \(path): \(readmeFiles)")
 				return nil
