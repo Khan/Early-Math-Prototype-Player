@@ -43,8 +43,12 @@ class PrototypeListTableViewController: UITableViewController {
 	override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 		tableView.deselectRowAtIndexPath(indexPath, animated: true)
 		let prototype = self.prototypeProvider.prototypes[indexPath.row]
-		let readmeViewController = ReadmeViewController(prototype: prototype)
-		navigationController?.pushViewController(readmeViewController, animated: true)
+
+		if prototype.readmeURL != nil {
+			navigationController?.pushViewController(ReadmeViewController(prototype: prototype), animated: true)
+		} else {
+			navigationController?.pushViewController(PlayerViewController(path: prototype.mainFileURL), animated: true)
+		}
 	}
 
 

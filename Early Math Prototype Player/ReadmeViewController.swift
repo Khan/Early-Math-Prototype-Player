@@ -19,8 +19,16 @@ class ReadmeViewController: UIViewController {
 	}()
 
 	init(prototype: Prototype) {
-//		precondition(prototype.readmeURL != nil)
+		precondition(prototype.readmeURL != nil)
 		self.prototype = prototype
+
+		var error: NSError?
+		let markdownSource = NSString(contentsOfURL: prototype.readmeURL!, encoding: NSUTF8StringEncoding, error: &error)
+		precondition(markdownSource != nil, "Couldn't read markdown for \(prototype.name): \(error)")
+
+		let html = MMMarkdown.HTMLStringWithMarkdown(markdownSource! as String, error: &error)
+		println(html)
+
 		super.init(nibName: nil, bundle: nil)
 		
 		navigationItem.title = prototype.name
