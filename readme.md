@@ -1,5 +1,5 @@
 # Early-Math-Prototype-Player
-Play the Early Math Prototypes embedded in an iPad app.
+Play the [Early Math Prototypes](https://github.com/Khan/Early-Math-Prototypes) embedded in an iPad app.
 
 Running the app on your iPad:
 
