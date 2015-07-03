@@ -21,6 +21,8 @@
 		96DBF3901B3AFE68003E0D46 /* protoscope-bundle.js in Resources */ = {isa = PBXBuildFile; fileRef = 96DBF38F1B3AFE68003E0D46 /* protoscope-bundle.js */; };
 		EB3CBCF61B3B2ADE0038AE64 /* ReadmeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB3CBCF51B3B2ADE0038AE64 /* ReadmeViewController.swift */; };
 		EB7841D21B3BB121008E5160 /* libMMMarkdown-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EB7841C61B3BB114008E5160 /* libMMMarkdown-iOS.a */; };
+		EB9530441B47080800E4E5C8 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9530411B47080800E4E5C8 /* FLAnimatedImage.m */; };
+		EB9530451B47080800E4E5C8 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9530431B47080800E4E5C8 /* FLAnimatedImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,10 @@
 		EB3CBCF51B3B2ADE0038AE64 /* ReadmeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReadmeViewController.swift; sourceTree = "<group>"; };
 		EB7841BC1B3BB114008E5160 /* MMMarkdown.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MMMarkdown.xcodeproj; path = ThirdParty/MMMarkdown/MMMarkdown.xcodeproj; sourceTree = SOURCE_ROOT; };
 		EB7841D31B3BB13D008E5160 /* Early Math Prototype Player-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Early Math Prototype Player-Bridging-Header.h"; sourceTree = "<group>"; };
+		EB9530401B47080800E4E5C8 /* FLAnimatedImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImage.h; path = ThirdParty/FLAnimatedImage/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.h; sourceTree = SOURCE_ROOT; };
+		EB9530411B47080800E4E5C8 /* FLAnimatedImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImage.m; path = ThirdParty/FLAnimatedImage/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImage.m; sourceTree = SOURCE_ROOT; };
+		EB9530421B47080800E4E5C8 /* FLAnimatedImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FLAnimatedImageView.h; path = ThirdParty/FLAnimatedImage/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.h; sourceTree = SOURCE_ROOT; };
+		EB9530431B47080800E4E5C8 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = ThirdParty/FLAnimatedImage/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,7 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				EB7841D31B3BB13D008E5160 /* Early Math Prototype Player-Bridging-Header.h */,
-				EB7841BC1B3BB114008E5160 /* MMMarkdown.xcodeproj */,
+				EB9530341B4707D900E4E5C8 /* Third Party */,
 				96DBF35D1B3AF243003E0D46 /* Prototope.xcodeproj */,
 				962559221B39AFB9005E4360 /* Early-Math-Prototypes */,
 				962558FA1B39AF1A005E4360 /* Info.plist */,
@@ -254,6 +260,26 @@
 				EB7841CA1B3BB114008E5160 /* mmmarkdown */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		EB9530341B4707D900E4E5C8 /* Third Party */ = {
+			isa = PBXGroup;
+			children = (
+				EB9530461B47080C00E4E5C8 /* FLAnimatedImageView */,
+				EB7841BC1B3BB114008E5160 /* MMMarkdown.xcodeproj */,
+			);
+			name = "Third Party";
+			sourceTree = "<group>";
+		};
+		EB9530461B47080C00E4E5C8 /* FLAnimatedImageView */ = {
+			isa = PBXGroup;
+			children = (
+				EB9530401B47080800E4E5C8 /* FLAnimatedImage.h */,
+				EB9530411B47080800E4E5C8 /* FLAnimatedImage.m */,
+				EB9530421B47080800E4E5C8 /* FLAnimatedImageView.h */,
+				EB9530431B47080800E4E5C8 /* FLAnimatedImageView.m */,
+			);
+			name = FLAnimatedImageView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -435,8 +461,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9530451B47080800E4E5C8 /* FLAnimatedImageView.m in Sources */,
 				9625591C1B39AF72005E4360 /* PrototypeListCollectionViewController.swift in Sources */,
 				962558FC1B39AF1A005E4360 /* AppDelegate.swift in Sources */,
+				EB9530441B47080800E4E5C8 /* FLAnimatedImage.m in Sources */,
 				9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */,
 				962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */,
 				EB3CBCF61B3B2ADE0038AE64 /* ReadmeViewController.swift in Sources */,

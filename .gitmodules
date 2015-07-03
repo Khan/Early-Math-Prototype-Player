@@ -7,3 +7,6 @@
 [submodule "ThirdParty/MMMarkdown"]
 	path = ThirdParty/MMMarkdown
 	url = https://github.com/mdiep/MMMarkdown
+[submodule "ThirdParty/FLAnimatedImage"]
+	path = ThirdParty/FLAnimatedImage
+	url = https://github.com/Flipboard/FLAnimatedImage.git

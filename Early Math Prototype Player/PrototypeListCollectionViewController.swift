@@ -30,7 +30,7 @@ class PrototypeListCollectionViewController: UICollectionViewController, UIColle
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		collectionView!.registerClass(PrototypeCell.self, forCellWithReuseIdentifier: PrototypeCell.reuseIdentifier)
+		collectionView!.registerClass(PrototypePreviewCell.self, forCellWithReuseIdentifier: PrototypePreviewCell.reuseIdentifier)
 		collectionView!.backgroundColor = UIColor.whiteColor()
 		navigationItem.title = "Prototypes"
 	}
@@ -44,7 +44,7 @@ class PrototypeListCollectionViewController: UICollectionViewController, UIColle
 	}
 
 	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PrototypeCell.reuseIdentifier, forIndexPath: indexPath) as! PrototypeCell
+		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PrototypePreviewCell.reuseIdentifier, forIndexPath: indexPath) as! PrototypePreviewCell
 		cell.prototype = self.prototypeProvider.prototypes[indexPath.item]
 		return cell
 	}
@@ -64,15 +64,15 @@ class PrototypeListCollectionViewController: UICollectionViewController, UIColle
 	}
 
 	func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-		let width = collectionView.bounds.size.width / round(collectionView.bounds.size.width / PrototypeCell.desiredSize.width)
-		let height = width * PrototypeCell.desiredSize.height / PrototypeCell.desiredSize.width
+		let width = collectionView.bounds.size.width / round(collectionView.bounds.size.width / PrototypePreviewCell.desiredSize.width)
+		let height = width * PrototypePreviewCell.desiredSize.height / PrototypePreviewCell.desiredSize.width
 		return CGSize(width: floor(width), height: floor(height))
 	}
 
 }
 
 
-private class PrototypeCell: UICollectionViewCell {
+private class PrototypePreviewCell: UICollectionViewCell {
 	static let desiredSize = CGSize(width: 256, height: 192)
 	static let labelHeight: CGFloat = 50
 	static let labelHorizontalPadding: CGFloat = 15
@@ -82,16 +82,22 @@ private class PrototypeCell: UICollectionViewCell {
 			imageView.backgroundColor = UIColor(hue: CGFloat(rand()) / CGFloat(Int32.max), saturation: 1, brightness: 1, alpha: 1)
 			if let previewImageURL = prototype?.previewImageURL {
 				precondition(previewImageURL.fileURL)
-				imageView.image = UIImage(contentsOfFile: previewImageURL.path!)
+				if previewImageURL.pathExtension! == "gif" {
+					// do you believe in async after love
+					imageView.animatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: previewImageURL))
+				} else {
+					imageView.image = UIImage(contentsOfFile: previewImageURL.path!)
+				}
 			} else {
 				imageView.image = nil
+				imageView.animatedImage = nil
 			}
 			label.text = prototype?.name
 			setNeedsLayout()
 		}
 	}
 
-	let imageView = UIImageView()
+	let imageView = FLAnimatedImageView()
 	let label = UILabel()
 	let labelBar: UIVisualEffectView
 	let labelVibrancyContainer: UIVisualEffectView
@@ -118,12 +124,12 @@ private class PrototypeCell: UICollectionViewCell {
 		imageView.frame = contentView.bounds
 		labelBar.frame = CGRect(
 			x: 0,
-			y: contentView.bounds.size.height - PrototypeCell.labelHeight,
+			y: contentView.bounds.size.height - PrototypePreviewCell.labelHeight,
 			width: contentView.bounds.size.width,
-			height: PrototypeCell.labelHeight
+			height: PrototypePreviewCell.labelHeight
 		)
 		labelVibrancyContainer.frame = labelBar.bounds
-		label.frame = CGRectInset(labelVibrancyContainer.bounds, PrototypeCell.labelHorizontalPadding, 0)
+		label.frame = CGRectInset(labelVibrancyContainer.bounds, PrototypePreviewCell.labelHorizontalPadding, 0)
 	}
 
 	required init(coder aDecoder: NSCoder) {
