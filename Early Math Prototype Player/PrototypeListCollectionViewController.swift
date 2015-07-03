@@ -66,14 +66,14 @@ class PrototypeListCollectionViewController: UICollectionViewController, UIColle
 	func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
 		let width = collectionView.bounds.size.width / round(collectionView.bounds.size.width / PrototypeCell.desiredSize.width)
 		let height = width * PrototypeCell.desiredSize.height / PrototypeCell.desiredSize.width
-		return CGSize(width: width, height: height)
+		return CGSize(width: floor(width), height: floor(height))
 	}
 
 }
 
 
 private class PrototypeCell: UICollectionViewCell {
-	static let desiredSize = CGSize(width: 350, height: 262)
+	static let desiredSize = CGSize(width: 256, height: 192)
 	static let labelHeight: CGFloat = 50
 	static let labelHorizontalPadding: CGFloat = 15
 
