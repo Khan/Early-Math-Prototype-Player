@@ -74,8 +74,7 @@ class PrototypeListCollectionViewController: UICollectionViewController, UIColle
 
 private class PrototypePreviewCell: UICollectionViewCell {
 	static let desiredSize = CGSize(width: 256, height: 192)
-	static let labelHeight: CGFloat = 50
-	static let labelHorizontalPadding: CGFloat = 15
+	static let labelPadding: CGFloat = 15
 
 	var prototype: Prototype? {
 		didSet {
@@ -100,7 +99,13 @@ private class PrototypePreviewCell: UICollectionViewCell {
 	}
 
 	let imageView = FLAnimatedImageView()
-	let label = UILabel()
+
+	let label: UILabel = {
+		let label = UILabel()
+		label.numberOfLines = 2
+		return label
+	}()
+
 	let labelBar: UIVisualEffectView
 	let labelVibrancyContainer: UIVisualEffectView
 
@@ -124,14 +129,18 @@ private class PrototypePreviewCell: UICollectionViewCell {
 		super.layoutSubviews()
 
 		imageView.frame = contentView.bounds
+
+		let labelSizeThatFits = label.sizeThatFits(CGSize(width: contentView.bounds.size.width, height: CGFloat.max))
+		let labelHeight = labelSizeThatFits.height + 2 * PrototypePreviewCell.labelPadding
+
 		labelBar.frame = CGRect(
 			x: 0,
-			y: contentView.bounds.size.height - PrototypePreviewCell.labelHeight,
+			y: contentView.bounds.size.height - labelHeight,
 			width: contentView.bounds.size.width,
-			height: PrototypePreviewCell.labelHeight
+			height: labelHeight
 		)
 		labelVibrancyContainer.frame = labelBar.bounds
-		label.frame = CGRectInset(labelVibrancyContainer.bounds, PrototypePreviewCell.labelHorizontalPadding, 0)
+		label.frame = CGRectInset(labelVibrancyContainer.bounds, PrototypePreviewCell.labelPadding, 0)
 	}
 
 	required init(coder aDecoder: NSCoder) {
@@ -147,6 +156,6 @@ extension UICollectionViewCell {
 extension Prototype {
 	private var colorRepresentation: UIColor {
 		let hue = CGFloat(name.hash % Int(Int16.max)) / CGFloat(Int16.max)
-		return UIColor(hue: hue, saturation: 0.8, brightness: 1, alpha: 1)
+		return UIColor(hue: hue, saturation: 0.8, brightness: 0.96, alpha: 1)
 	}
 }
