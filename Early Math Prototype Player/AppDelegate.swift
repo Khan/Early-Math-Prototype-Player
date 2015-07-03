@@ -12,7 +12,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate {
 
 	var window: UIWindow?
-	var prototypeListTableViewController: PrototypeListTableViewController!
+	var prototypeListCollectionViewController: PrototypeListCollectionViewController!
 	var navigationController: UINavigationController!
 
 
@@ -22,9 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 		
 		window = UIWindow(frame: UIScreen.mainScreen().bounds)
 		
-		prototypeListTableViewController = PrototypeListTableViewController(style: .Plain)
+		prototypeListCollectionViewController = PrototypeListCollectionViewController()
 		
-		navigationController = UINavigationController(rootViewController: prototypeListTableViewController)
+		navigationController = UINavigationController(rootViewController: prototypeListCollectionViewController)
 		navigationController.delegate = self
 
 		window?.rootViewController = navigationController

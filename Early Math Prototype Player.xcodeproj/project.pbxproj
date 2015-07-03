@@ -10,7 +10,7 @@
 		962558FC1B39AF1A005E4360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962558FB1B39AF1A005E4360 /* AppDelegate.swift */; };
 		962559031B39AF1A005E4360 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962559021B39AF1A005E4360 /* Images.xcassets */; };
 		962559061B39AF1A005E4360 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962559041B39AF1A005E4360 /* LaunchScreen.xib */; };
-		9625591C1B39AF72005E4360 /* PrototypeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591B1B39AF72005E4360 /* PrototypeListTableViewController.swift */; };
+		9625591C1B39AF72005E4360 /* PrototypeListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591B1B39AF72005E4360 /* PrototypeListCollectionViewController.swift */; };
 		9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591D1B39AF80005E4360 /* PlayerViewController.swift */; };
 		962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962559201B39AFA6005E4360 /* PrototypeProvider.swift */; };
 		962559231B39AFB9005E4360 /* Early-Math-Prototypes in Resources */ = {isa = PBXBuildFile; fileRef = 962559221B39AFB9005E4360 /* Early-Math-Prototypes */; };
@@ -152,7 +152,7 @@
 		962558FB1B39AF1A005E4360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		962559021B39AF1A005E4360 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		962559051B39AF1A005E4360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		9625591B1B39AF72005E4360 /* PrototypeListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeListTableViewController.swift; sourceTree = "<group>"; };
+		9625591B1B39AF72005E4360 /* PrototypeListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeListCollectionViewController.swift; sourceTree = "<group>"; };
 		9625591D1B39AF80005E4360 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		962559201B39AFA6005E4360 /* PrototypeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeProvider.swift; sourceTree = "<group>"; };
 		962559221B39AFB9005E4360 /* Early-Math-Prototypes */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "Early-Math-Prototypes"; sourceTree = "<group>"; };
@@ -198,7 +198,7 @@
 			children = (
 				9625591F1B39AF96005E4360 /* Model */,
 				962558FB1B39AF1A005E4360 /* AppDelegate.swift */,
-				9625591B1B39AF72005E4360 /* PrototypeListTableViewController.swift */,
+				9625591B1B39AF72005E4360 /* PrototypeListCollectionViewController.swift */,
 				EB3CBCF51B3B2ADE0038AE64 /* ReadmeViewController.swift */,
 				9625591D1B39AF80005E4360 /* PlayerViewController.swift */,
 				962559021B39AF1A005E4360 /* Images.xcassets */,
@@ -285,6 +285,7 @@
 		962558EE1B39AF1A005E4360 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Khan Academy";
 				TargetAttributes = {
@@ -434,7 +435,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9625591C1B39AF72005E4360 /* PrototypeListTableViewController.swift in Sources */,
+				9625591C1B39AF72005E4360 /* PrototypeListCollectionViewController.swift in Sources */,
 				962558FC1B39AF1A005E4360 /* AppDelegate.swift in Sources */,
 				9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */,
 				962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */,
