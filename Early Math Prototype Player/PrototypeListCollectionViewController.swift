@@ -79,11 +79,12 @@ private class PrototypePreviewCell: UICollectionViewCell {
 
 	var prototype: Prototype? {
 		didSet {
-			imageView.backgroundColor = UIColor(hue: CGFloat(rand()) / CGFloat(Int32.max), saturation: 1, brightness: 1, alpha: 1)
+			imageView.backgroundColor = prototype?.colorRepresentation
+
 			if let previewImageURL = prototype?.previewImageURL {
 				precondition(previewImageURL.fileURL)
 				if previewImageURL.pathExtension! == "gif" {
-					// do you believe in async after love
+					// TODO: do you believe in async after love
 					imageView.animatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: previewImageURL))
 				} else {
 					imageView.image = UIImage(contentsOfFile: previewImageURL.path!)
@@ -92,6 +93,7 @@ private class PrototypePreviewCell: UICollectionViewCell {
 				imageView.image = nil
 				imageView.animatedImage = nil
 			}
+
 			label.text = prototype?.name
 			setNeedsLayout()
 		}
@@ -142,3 +144,9 @@ extension UICollectionViewCell {
 	class var reuseIdentifier: String { return NSStringFromClass(self.self) }
 }
 
+extension Prototype {
+	private var colorRepresentation: UIColor {
+		let hue = CGFloat(name.hash % Int(Int16.max)) / CGFloat(Int16.max)
+		return UIColor(hue: hue, saturation: 0.8, brightness: 1, alpha: 1)
+	}
+}
