@@ -80,6 +80,12 @@ private class PrototypeCell: UICollectionViewCell {
 	var prototype: Prototype? {
 		didSet {
 			imageView.backgroundColor = UIColor(hue: CGFloat(rand()) / CGFloat(Int32.max), saturation: 1, brightness: 1, alpha: 1)
+			if let previewImageURL = prototype?.previewImageURL {
+				precondition(previewImageURL.fileURL)
+				imageView.image = UIImage(contentsOfFile: previewImageURL.path!)
+			} else {
+				imageView.image = nil
+			}
 			label.text = prototype?.name
 			setNeedsLayout()
 		}
