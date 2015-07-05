@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
 	var window: UIWindow?
 	var prototypeListTableViewController: PrototypeListTableViewController!
@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeBackGesture:")
 		swipeGestureRecognizer.numberOfTouchesRequired = 3
 		swipeGestureRecognizer.direction = .Right
+		swipeGestureRecognizer.delegate = self
 		window?.addGestureRecognizer(swipeGestureRecognizer)
 		window?.makeKeyAndVisible()
 		
@@ -40,6 +41,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 
 	func handleSwipeBackGesture(gesture: UIGestureRecognizer!) {
 		self.navigationController.popToRootViewControllerAnimated(true)
+	}
+
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return false
+	}
+
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
 	}
 
 	// Hacks to show/hide navigation bar in prototypes so hack wow
