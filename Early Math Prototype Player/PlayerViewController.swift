@@ -75,6 +75,12 @@ class PlayerViewController: UIViewController {
 		runJSPrototope()
 	}
 
+	override func viewWillAppear(animated: Bool) {
+		if !InstructionsViewController.userHasSeenInstructions {
+			self.presentViewController(InstructionsViewController(), animated: true, completion: nil)
+		}
+	}
+
 	
 	func runJSPrototope() {
 		
