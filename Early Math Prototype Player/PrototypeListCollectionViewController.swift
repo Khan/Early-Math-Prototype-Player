@@ -83,8 +83,16 @@ private class PrototypePreviewCell: UICollectionViewCell {
 			if let previewImageURL = prototype?.previewImageURL {
 				precondition(previewImageURL.fileURL)
 				if previewImageURL.pathExtension! == "gif" {
-					// TODO: do you believe in async after love
-					imageView.animatedImage = FLAnimatedImage(animatedGIFData: NSData(contentsOfURL: previewImageURL))
+					// ultra lazy async lol
+					dispatch_async(dispatch_get_global_queue(0, 0)) {
+						let gifData = NSData(contentsOfURL: previewImageURL)
+						let image = FLAnimatedImage(animatedGIFData: gifData)
+						dispatch_async(dispatch_get_main_queue()) {
+							if self.prototype?.previewImageURL == .Some(previewImageURL) {
+								self.imageView.animatedImage = image
+							}
+						}
+					}
 				} else {
 					imageView.image = UIImage(contentsOfFile: previewImageURL.path!)
 				}
@@ -110,7 +118,7 @@ private class PrototypePreviewCell: UICollectionViewCell {
 	let labelVibrancyContainer: UIVisualEffectView
 
 	override init(frame: CGRect) {
-		let blurEffect = UIBlurEffect(style: .ExtraLight)
+		let blurEffect = UIBlurEffect(style: .Dark)
 		labelBar = UIVisualEffectView(effect: blurEffect)
 		labelVibrancyContainer = UIVisualEffectView(effect: UIVibrancyEffect(forBlurEffect: blurEffect))
 
