@@ -46,8 +46,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 	func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
 		if viewController is PlayerViewController {
 			navigationController.setNavigationBarHidden(true, animated: true)
+			UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .None) // view controller based status bar APIs interacts poorly with hiding/showing the navigation bar
 		} else {
 			navigationController.setNavigationBarHidden(false, animated: true)
+			UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .None)
 		}
 	}
 }
