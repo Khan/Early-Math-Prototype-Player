@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		962558FC1B39AF1A005E4360 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962558FB1B39AF1A005E4360 /* AppDelegate.swift */; };
 		962559031B39AF1A005E4360 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 962559021B39AF1A005E4360 /* Images.xcassets */; };
-		962559061B39AF1A005E4360 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 962559041B39AF1A005E4360 /* LaunchScreen.xib */; };
 		9625591C1B39AF72005E4360 /* PrototypeListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591B1B39AF72005E4360 /* PrototypeListCollectionViewController.swift */; };
 		9625591E1B39AF80005E4360 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9625591D1B39AF80005E4360 /* PlayerViewController.swift */; };
 		962559211B39AFA6005E4360 /* PrototypeProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 962559201B39AFA6005E4360 /* PrototypeProvider.swift */; };
@@ -24,6 +23,7 @@
 		EB9530441B47080800E4E5C8 /* FLAnimatedImage.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9530411B47080800E4E5C8 /* FLAnimatedImage.m */; };
 		EB9530451B47080800E4E5C8 /* FLAnimatedImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9530431B47080800E4E5C8 /* FLAnimatedImageView.m */; };
 		EB95312B1B49D88700E4E5C8 /* finger_demo.m4v in Resources */ = {isa = PBXBuildFile; fileRef = EB95312A1B49D88700E4E5C8 /* finger_demo.m4v */; };
+		EB9530F31B498A4D00E4E5C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB9530F21B498A4D00E4E5C8 /* LaunchScreen.storyboard */; };
 		EB9531381B49D8C300E4E5C8 /* Instructions.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB9531371B49D8C300E4E5C8 /* Instructions.xib */; };
 		EB95313B1B49D8DB00E4E5C8 /* InstructionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB95313A1B49D8DB00E4E5C8 /* InstructionsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -152,11 +152,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Early Math Prototype Player.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		962558F61B39AF1A005E4360 /* Early Math.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Early Math.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		962558FA1B39AF1A005E4360 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		962558FB1B39AF1A005E4360 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		962559021B39AF1A005E4360 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		962559051B39AF1A005E4360 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		9625591B1B39AF72005E4360 /* PrototypeListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeListCollectionViewController.swift; sourceTree = "<group>"; };
 		9625591D1B39AF80005E4360 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		962559201B39AFA6005E4360 /* PrototypeProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrototypeProvider.swift; sourceTree = "<group>"; };
@@ -172,6 +171,7 @@
 		EB9530431B47080800E4E5C8 /* FLAnimatedImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FLAnimatedImageView.m; path = ThirdParty/FLAnimatedImage/FLAnimatedImageDemo/FLAnimatedImage/FLAnimatedImageView.m; sourceTree = SOURCE_ROOT; };
 		EB95312A1B49D88700E4E5C8 /* finger_demo.m4v */ = {isa = PBXFileReference; lastKnownFileType = file; path = finger_demo.m4v; sourceTree = "<group>"; };
 		EB9531371B49D8C300E4E5C8 /* Instructions.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Instructions.xib; sourceTree = "<group>"; };
+		EB9530F21B498A4D00E4E5C8 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB95313A1B49D8DB00E4E5C8 /* InstructionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstructionsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -200,7 +200,7 @@
 		962558F71B39AF1A005E4360 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */,
+				962558F61B39AF1A005E4360 /* Early Math.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -214,8 +214,8 @@
 				EB3CBCF51B3B2ADE0038AE64 /* ReadmeViewController.swift */,
 				9625591D1B39AF80005E4360 /* PlayerViewController.swift */,
 				EB9531391B49D8CD00E4E5C8 /* Instructions UI */,
+				EB9530F21B498A4D00E4E5C8 /* LaunchScreen.storyboard */,
 				962559021B39AF1A005E4360 /* Images.xcassets */,
-				962559041B39AF1A005E4360 /* LaunchScreen.xib */,
 				962558F91B39AF1A005E4360 /* Supporting Files */,
 			);
 			path = "Early Math Prototype Player";
@@ -319,7 +319,7 @@
 			);
 			name = "Early Math Prototype Player";
 			productName = "Early Math Prototype Player";
-			productReference = 962558F61B39AF1A005E4360 /* Early Math Prototype Player.app */;
+			productReference = 962558F61B39AF1A005E4360 /* Early Math.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -466,6 +466,7 @@
 			files = (
 				96DBF3901B3AFE68003E0D46 /* protoscope-bundle.js in Resources */,
 				EB95312B1B49D88700E4E5C8 /* finger_demo.m4v in Resources */,
+				EB9530F31B498A4D00E4E5C8 /* LaunchScreen.storyboard in Resources */,
 				962559231B39AFB9005E4360 /* Early-Math-Prototypes in Resources */,
 				962559061B39AF1A005E4360 /* LaunchScreen.xib in Resources */,
 				EB9531381B49D8C300E4E5C8 /* Instructions.xib in Resources */,
@@ -505,17 +506,6 @@
 			targetProxy = 96DBF3851B3AF25A003E0D46 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		962559041B39AF1A005E4360 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				962559051B39AF1A005E4360 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		962559131B39AF1A005E4360 /* Debug */ = {
@@ -621,7 +611,7 @@
 				INFOPLIST_FILE = "Early Math Prototype Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/prototope/ThirdParty/**";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Early Math";
 				SWIFT_OBJC_BRIDGING_HEADER = "Early Math Prototype Player/Early Math Prototype Player-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 2;
@@ -649,7 +639,7 @@
 				INFOPLIST_FILE = "Early Math Prototype Player/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/prototope/ThirdParty/**";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Early Math";
 				SWIFT_OBJC_BRIDGING_HEADER = "Early Math Prototype Player/Early Math Prototype Player-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "";

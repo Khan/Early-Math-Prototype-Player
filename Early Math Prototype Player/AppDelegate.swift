@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDelegate, UIGestureRecognizerDelegate {
 
 	var window: UIWindow?
 	var prototypeListCollectionViewController: PrototypeListCollectionViewController!
@@ -32,6 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeBackGesture:")
 		swipeGestureRecognizer.numberOfTouchesRequired = 3
 		swipeGestureRecognizer.direction = .Right
+		swipeGestureRecognizer.delegate = self
 		window?.addGestureRecognizer(swipeGestureRecognizer)
 		window?.makeKeyAndVisible()
 		
@@ -42,12 +43,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 		self.navigationController.popToRootViewControllerAnimated(true)
 	}
 
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailByGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return false
+	}
+
+	func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+		return true
+	}
+
 	// Hacks to show/hide navigation bar in prototypes so hack wow
 	func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
 		if viewController is PlayerViewController {
 			navigationController.setNavigationBarHidden(true, animated: true)
+			UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .None) // view controller based status bar APIs interacts poorly with hiding/showing the navigation bar
 		} else {
 			navigationController.setNavigationBarHidden(false, animated: true)
+			UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: .None)
 		}
 	}
 }
