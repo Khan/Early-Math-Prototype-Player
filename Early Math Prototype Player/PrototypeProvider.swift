@@ -51,6 +51,7 @@ struct PrototypeProvider {
 struct Prototype {
 	let mainFileURL: NSURL
 	let readmeURL: NSURL?
+	let previewImageURL: NSURL?
 	let name: String
 }
 
@@ -102,8 +103,24 @@ extension Prototype {
 				println("Multiple README files found in \(path): \(readmeFiles)")
 				return nil
 			}
+
+			let previewFiles = contents!.filter {
+				let normalizedName = $0.lowercaseString
+				return normalizedName.hasPrefix("preview") &&
+					contains(["png", "gif", "jpg"], normalizedName.pathExtension)
+			}
+			switch previewFiles.count {
+			case 0:
+				previewImageURL = nil
+			case 1:
+				previewImageURL = NSURL(fileURLWithPath: path.stringByAppendingPathComponent(previewFiles[0]))
+			default:
+				println("Multiple preview images found in \(path): \(previewFiles)")
+				return nil
+			}
 		} else {
 			readmeURL = nil
+			previewImageURL = nil
 			mainScriptPath = path
 		}
 		

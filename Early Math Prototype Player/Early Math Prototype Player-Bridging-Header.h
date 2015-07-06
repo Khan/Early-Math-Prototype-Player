@@ -3,3 +3,5 @@
 //
 
 #import <MMMarkdown/MMMarkdown.h>
+#import "FLAnimatedImage.h"
+#import "FLAnimatedImageView.h"
