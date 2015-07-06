@@ -106,7 +106,11 @@ private class PrototypePreviewCell: UICollectionViewCell {
 		}
 	}
 
-	let imageView = FLAnimatedImageView()
+	let imageView: FLAnimatedImageView = {
+		let imageView = FLAnimatedImageView()
+		imageView.contentMode = .ScaleAspectFill
+		return imageView
+	}()
 
 	let label: UILabel = {
 		let label = UILabel()
