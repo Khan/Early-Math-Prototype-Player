@@ -51,7 +51,7 @@ class InstructionsViewController: UIViewController {
 	}
 }
 
-@objc class AVPlayerView: UIView {
+@objc(AVPlayerView) class AVPlayerView: UIView {
 	override class func layerClass() -> AnyClass { return AVPlayerLayer.self }
 	var playerLayer: AVPlayerLayer { return layer as! AVPlayerLayer }
 }
