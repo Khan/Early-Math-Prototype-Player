@@ -19,8 +19,7 @@ struct PrototypeProvider {
 	init() {
 		if let resourcePath = NSBundle.mainBundle().resourcePath {
 			let earlyMathPath = (resourcePath as NSString).stringByAppendingPathComponent(PrototypeProvider.prototypeDirectory)
-			var errorPtr = NSErrorPointer()
-			let files = (try! NSFileManager.defaultManager().contentsOfDirectoryAtPath(earlyMathPath)) 
+			let files = try! NSFileManager.defaultManager().contentsOfDirectoryAtPath(earlyMathPath)
 			let validPrototypeDirectories = files.filter { prototypeDirectory in
 				PrototypeProvider.prototypeIsValidAtPath((earlyMathPath as NSString).stringByAppendingPathComponent(prototypeDirectory))
 			}

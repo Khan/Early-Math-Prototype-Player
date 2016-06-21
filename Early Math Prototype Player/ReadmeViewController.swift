@@ -56,7 +56,7 @@ class ReadmeViewController: UIViewController {
 		super.loadView()
 		view.backgroundColor = UIColor.whiteColor()
 
-		startButton.addTarget(self, action: "startPrototype", forControlEvents: .TouchUpInside)
+		startButton.addTarget(self, action: #selector(self.startPrototype), forControlEvents: .TouchUpInside)
 		view.addSubview(startButton)
 
 		webView.loadHTMLString(readmeHTMLRepresentation, baseURL: NSURL(fileURLWithPath: "/"))

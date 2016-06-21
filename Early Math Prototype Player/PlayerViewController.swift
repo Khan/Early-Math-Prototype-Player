@@ -114,7 +114,7 @@ class PlayerViewController: UIViewController {
 	
 	override var keyCommands: [UIKeyCommand]? {
 		get {
-			let escape = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "handleKeyCommand:")
+			let escape = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: #selector(self.handleKeyCommand(_:)))
 			return [escape]
 		}
 	}

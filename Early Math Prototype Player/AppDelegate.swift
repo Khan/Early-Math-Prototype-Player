@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UINavigationControllerDel
 
 		window?.rootViewController = navigationController
 		
-		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: "handleSwipeBackGesture:")
+		let swipeGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipeBackGesture(_:)))
 		swipeGestureRecognizer.numberOfTouchesRequired = 3
 		swipeGestureRecognizer.direction = .Right
 		swipeGestureRecognizer.delegate = self

@@ -34,7 +34,7 @@ class InstructionsViewController: UIViewController {
 
 		videoPlayerView.playerLayer.player = AVPlayer(URL: NSBundle.mainBundle().URLForResource("finger_demo", withExtension: "m4v")!)
 		videoPlayerView.playerLayer.player!.play()
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "loopPlayer", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayerView.playerLayer.player!.currentItem)
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.loopPlayer), name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayerView.playerLayer.player!.currentItem)
 	}
 
 	override func viewDidDisappear(animated: Bool) {
