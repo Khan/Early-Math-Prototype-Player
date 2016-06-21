@@ -21,7 +21,7 @@ class PlayerViewController: UIViewController {
 		super.init(nibName: nil, bundle: nil)
 	}
 	
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
 	
@@ -36,8 +36,8 @@ class PlayerViewController: UIViewController {
 		let imageProvider = { 
 			(name: String) -> UIImage? in
 			let scale = UIScreen.mainScreen().scale
-			let filenameWithScale = name.stringByAppendingString("@\(Int(scale))x").stringByAppendingPathExtension("png")!
-			let filename = name.stringByAppendingPathExtension("png")!
+			let filenameWithScale = (name.stringByAppendingString("@\(Int(scale))x") as NSString).stringByAppendingPathExtension("png")!
+			let filename = (name as NSString).stringByAppendingPathExtension("png")!
 			
 			let scalePath = prototypeDirectoryURL.URLByAppendingPathComponent(filenameWithScale)
 			let noScalePath = prototypeDirectoryURL.URLByAppendingPathComponent(filename)
@@ -56,7 +56,7 @@ class PlayerViewController: UIViewController {
 			for fileExtension in Sound.supportedExtensions {
 				let URL = prototypeDirectoryURL.URLByAppendingPathComponent(name).URLByAppendingPathExtension(fileExtension)
 				if fileManager.fileExistsAtPath(URL.path!) {
-					return NSData(contentsOfURL: URL, options: nil, error: nil)
+					return try? NSData(contentsOfURL: URL, options: [])
 				}
 			}
 			return nil
@@ -87,13 +87,13 @@ class PlayerViewController: UIViewController {
 		context = Context()
 		context.exceptionHandler = { value in
 			let lineNumber = value.objectForKeyedSubscript("line")
-			println("Exception on line \(lineNumber): \(value)")
+			print("Exception on line \(lineNumber): \(value)")
 		}
 		context.consoleLogHandler = { message in
-			println(message)
+			print(message)
 		}
 		
-		let script = NSString(contentsOfURL: self.jsPath, encoding: NSUTF8StringEncoding, error: nil)!
+		let script = try! NSString(contentsOfURL: self.jsPath, encoding: NSUTF8StringEncoding)
 		context.evaluateScript(script as String)
 	}
 	
@@ -112,9 +112,9 @@ class PlayerViewController: UIViewController {
 		return true
 	}
 	
-	override var keyCommands: [AnyObject]? {
+	override var keyCommands: [UIKeyCommand]? {
 		get {
-			let escape = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: nil, action: "handleKeyCommand:")
+			let escape = UIKeyCommand(input: UIKeyInputEscape, modifierFlags: [], action: "handleKeyCommand:")
 			return [escape]
 		}
 	}

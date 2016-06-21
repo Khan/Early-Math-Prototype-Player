@@ -13,7 +13,7 @@ class ReadmeViewController: UIViewController {
 	let prototype: Prototype
 
 	lazy var startButton: UIButton = {
-		let button = UIButton.buttonWithType(.System) as! UIButton
+		let button = UIButton(type: .System)
 		button.setTitle("Start", forState: .Normal)
 		button.titleLabel!.font = UIFont.systemFontOfSize(24)
 		return button
@@ -35,16 +35,19 @@ class ReadmeViewController: UIViewController {
 		navigationItem.title = prototype.name
 	}
 
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has not been implemented")
 	}
 
 	private var readmeHTMLRepresentation: String {
-		var error: NSError?
-		let markdownSource = NSString(contentsOfURL: prototype.readmeURL!, encoding: NSUTF8StringEncoding, error: &error)
-		precondition(markdownSource != nil, "Couldn't read markdown for \(prototype.name): \(error)")
+		let markdownSource = try! NSString(contentsOfURL: prototype.readmeURL!, encoding: NSUTF8StringEncoding)
 
-		let body = MMMarkdown.HTMLStringWithMarkdown(markdownSource! as String, extensions: .GitHubFlavored, error: &error) ?? "Couldn't parse README: \(error)"
+		let body: NSString
+		do {
+			body = try MMMarkdown.HTMLStringWithMarkdown(String(markdownSource), extensions: .GitHubFlavored)
+		} catch {
+			body = "Couldn't parse README: \(error)"
+		}
 		let systemFontName = UIFont.systemFontOfSize(12).fontName
 		return "<html><head><style type='text/css'>* { font-family: '\(systemFontName)' }</style><body>\(body)</body></html>"
 	}

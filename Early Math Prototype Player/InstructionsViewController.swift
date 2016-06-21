@@ -19,7 +19,7 @@ class InstructionsViewController: UIViewController {
 		super.init(nibName: "Instructions", bundle: nil)
 	}
 
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 	    fatalError("init(coder:) has not been implemented")
 	}
 
@@ -32,18 +32,18 @@ class InstructionsViewController: UIViewController {
 
 		simulatorNoteLabel.hidden = TARGET_IPHONE_SIMULATOR == 0
 
-		videoPlayerView.playerLayer.player = AVPlayer(URL: NSBundle.mainBundle().URLForResource("finger_demo", withExtension: "m4v"))
-		videoPlayerView.playerLayer.player.play()
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "loopPlayer", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayerView.playerLayer.player.currentItem)
+		videoPlayerView.playerLayer.player = AVPlayer(URL: NSBundle.mainBundle().URLForResource("finger_demo", withExtension: "m4v")!)
+		videoPlayerView.playerLayer.player!.play()
+		NSNotificationCenter.defaultCenter().addObserver(self, selector: "loopPlayer", name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayerView.playerLayer.player!.currentItem)
 	}
 
 	override func viewDidDisappear(animated: Bool) {
-		NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayerView.playerLayer.player.currentItem)
+		NSNotificationCenter.defaultCenter().removeObserver(self, name: AVPlayerItemDidPlayToEndTimeNotification, object: videoPlayerView.playerLayer.player!.currentItem)
 	}
 
 	@objc private func loopPlayer() {
-		videoPlayerView.playerLayer.player.seekToTime(kCMTimeZero)
-		videoPlayerView.playerLayer.player.play()
+		videoPlayerView.playerLayer.player!.seekToTime(kCMTimeZero)
+		videoPlayerView.playerLayer.player!.play()
 	}
 
 	@IBAction func handleContinue(sender: AnyObject) {

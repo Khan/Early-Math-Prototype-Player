@@ -24,7 +24,7 @@ class PrototypeListCollectionViewController: UICollectionViewController, UIColle
 		super.init(collectionViewLayout: layout)
 	}
 
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has intentionally not been implemented")
 	}
 
@@ -155,7 +155,7 @@ private class PrototypePreviewCell: UICollectionViewCell {
 		label.frame = CGRectInset(labelVibrancyContainer.bounds, PrototypePreviewCell.labelPadding, 0)
 	}
 
-	required init(coder aDecoder: NSCoder) {
+	required init?(coder aDecoder: NSCoder) {
 		fatalError("init(coder:) has intentionally not been implemented")
 	}
 }

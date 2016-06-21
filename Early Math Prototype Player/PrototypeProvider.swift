@@ -18,14 +18,14 @@ struct PrototypeProvider {
 	
 	init() {
 		if let resourcePath = NSBundle.mainBundle().resourcePath {
-			let earlyMathPath = resourcePath.stringByAppendingPathComponent(PrototypeProvider.prototypeDirectory)
+			let earlyMathPath = (resourcePath as NSString).stringByAppendingPathComponent(PrototypeProvider.prototypeDirectory)
 			var errorPtr = NSErrorPointer()
-			let files = NSFileManager.defaultManager().contentsOfDirectoryAtPath(earlyMathPath, error: errorPtr) as! [String]
+			let files = (try! NSFileManager.defaultManager().contentsOfDirectoryAtPath(earlyMathPath)) 
 			let validPrototypeDirectories = files.filter { prototypeDirectory in
-				PrototypeProvider.prototypeIsValidAtPath(earlyMathPath.stringByAppendingPathComponent(prototypeDirectory))
+				PrototypeProvider.prototypeIsValidAtPath((earlyMathPath as NSString).stringByAppendingPathComponent(prototypeDirectory))
 			}
 			self.prototypes = validPrototypeDirectories.map { prototypeDirectory in
-				let prototypeURL = NSURL(fileURLWithPath: earlyMathPath.stringByAppendingPathComponent(prototypeDirectory), isDirectory: true)!
+				let prototypeURL = NSURL(fileURLWithPath: (earlyMathPath as NSString).stringByAppendingPathComponent(prototypeDirectory), isDirectory: true)
 				return Prototype(directoryURL: prototypeURL, name: prototypeDirectory)!
 			}
 		} else {
@@ -38,7 +38,7 @@ struct PrototypeProvider {
 		var isDirectory: ObjCBool = ObjCBool(false)
 		let fileManager = NSFileManager.defaultManager()
 		if fileManager.fileExistsAtPath(path, isDirectory: &isDirectory) {
-			let prototypeIsMarkedAsHidden = fileManager.fileExistsAtPath(path.stringByAppendingPathComponent(PrototypeProvider.prototypeHiddenMarker))
+			let prototypeIsMarkedAsHidden = fileManager.fileExistsAtPath((path as NSString).stringByAppendingPathComponent(PrototypeProvider.prototypeHiddenMarker))
 			return isDirectory.boolValue && !prototypeIsMarkedAsHidden
 		} else {
 			return false
@@ -61,61 +61,60 @@ extension Prototype {
 		
 		if !directoryURL.fileURL { return nil }
 		
-		var error: NSError? = nil
 		let path = directoryURL.filePathURL!.path!
 		
 		var isDirectory: ObjCBool = ObjCBool(false)
 		let exists = NSFileManager.defaultManager().fileExistsAtPath(path, isDirectory: &isDirectory)
 		if !exists {
-			println("File does not exist: \(path)")
+			print("File does not exist: \(path)")
 			return nil
 		}
 		
 		var mainScriptPath: String
 
 		if isDirectory.boolValue {
-			var error: NSError? = nil
-			let contents = NSFileManager.defaultManager().contentsOfDirectoryAtPath(path, error: &error) as! [String]?
-			if contents == nil {
-				println("Couldn't read directory \(path): \(error)")
-				return nil
-			}
-			
-			let javaScriptFiles = contents!.filter { $0.pathExtension == "js" }
-			switch javaScriptFiles.count {
-			case 0:
-				println("No JavaScript files found in \(path)")
-				return nil
-			case 1:
-				mainScriptPath = path.stringByAppendingPathComponent(javaScriptFiles.first!)
-			default:
-				println("Multiple JavaScript files found in \(path): \(javaScriptFiles)")
-				return nil
-			}
+			do {
+				let contents = try NSFileManager.defaultManager().contentsOfDirectoryAtPath(path) as [String]?
 
-			let readmeFiles = contents!.filter { $0.lowercaseString.hasPrefix("readme.md") }
-			switch readmeFiles.count {
-			case 0:
-				readmeURL = nil
-			case 1:
-				readmeURL = NSURL(fileURLWithPath: path.stringByAppendingPathComponent(readmeFiles[0]))
-			default:
-				println("Multiple README files found in \(path): \(readmeFiles)")
-				return nil
-			}
+				let javaScriptFiles = contents!.filter { ($0 as NSString).pathExtension == "js" }
+				switch javaScriptFiles.count {
+				case 0:
+					print("No JavaScript files found in \(path)")
+					return nil
+				case 1:
+					mainScriptPath = (path as NSString).stringByAppendingPathComponent(javaScriptFiles.first!)
+				default:
+					print("Multiple JavaScript files found in \(path): \(javaScriptFiles)")
+					return nil
+				}
 
-			let previewFiles = contents!.filter {
-				let normalizedName = $0.lowercaseString
-				return normalizedName.hasPrefix("preview") &&
-					contains(["png", "gif", "jpg"], normalizedName.pathExtension)
-			}
-			switch previewFiles.count {
-			case 0:
-				previewImageURL = nil
-			case 1:
-				previewImageURL = NSURL(fileURLWithPath: path.stringByAppendingPathComponent(previewFiles[0]))
-			default:
-				println("Multiple preview images found in \(path): \(previewFiles)")
+				let readmeFiles = contents!.filter { $0.lowercaseString.hasPrefix("readme.md") }
+				switch readmeFiles.count {
+				case 0:
+					readmeURL = nil
+				case 1:
+					readmeURL = NSURL(fileURLWithPath: (path as NSString).stringByAppendingPathComponent(readmeFiles[0]))
+				default:
+					print("Multiple README files found in \(path): \(readmeFiles)")
+					return nil
+				}
+
+				let previewFiles = contents!.filter {
+					let normalizedName = $0.lowercaseString
+					return normalizedName.hasPrefix("preview") &&
+						["png", "gif", "jpg"].contains((normalizedName as NSString).pathExtension)
+				}
+				switch previewFiles.count {
+				case 0:
+					previewImageURL = nil
+				case 1:
+					previewImageURL = NSURL(fileURLWithPath: (path as NSString).stringByAppendingPathComponent(previewFiles[0]))
+				default:
+					print("Multiple preview images found in \(path): \(previewFiles)")
+					return nil
+				}
+			} catch {
+				print("Couldn't read directory \(path): \(error)")
 				return nil
 			}
 		} else {
@@ -125,7 +124,7 @@ extension Prototype {
 		}
 		
 		self.name = name
-		self.mainFileURL = NSURL(fileURLWithPath: mainScriptPath)!
+		self.mainFileURL = NSURL(fileURLWithPath: mainScriptPath)
 	}
 }
 
